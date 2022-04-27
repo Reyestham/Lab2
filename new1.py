@@ -10,7 +10,7 @@ def main():
     print(max)
     sort = sort_temperature(num_list)
     print(sort)
-    med = calc_median_temperature(num_list)
+    med = calc_median_temperature(sort)
     print(med)
 
 def display_main_menu():
@@ -19,12 +19,13 @@ def display_main_menu():
 
 def get_user_input():
     print("get_user_input")
-    x1 = float(input("Please enter temp 1: "))
-    x2 = float(input("Please enter temp 2: "))
-    x3 = float(input("Please enter temp 3: "))
-    x4 = float(input("Please enter temp 4: "))
-    tot = [x1,x2,x3,x4]
-    return tot
+    x = input("please enter out temperatures with a , between them")
+    temps = x.split(',')
+    temps2=[]
+    for x in range(len(temps)):
+        floatnum=float(temps[x])
+        temps2.append(floatnum)
+    return temps2
 
 
 def calc_average(x):
