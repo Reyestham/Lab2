@@ -19,7 +19,7 @@ def display_main_menu():
 
 def get_user_input():
     print("get_user_input")
-    x = input("please enter out temperatures with a , between them")
+    x = input("please enter out temperatures with a , between them: ")
     temps = x.split(',')
     temps2=[]
     for x in range(len(temps)):
@@ -30,14 +30,18 @@ def get_user_input():
 
 def calc_average(x):
     print("calculate average")
-    avg = (x[0]+x[1]+x[2]+x[3])/4
+    sum = 0
+    for i in range(len(x)):
+        sum = sum+x[i]
+
+    avg = sum/(len(x))
     return avg
 
 
 def find_min_max(x):
     print("find_min_max")
     max = x[0]
-    for i in range(0,4):
+    for i in range(len(x)):
         if x[i]>max:
             max = x[i]
     return max
